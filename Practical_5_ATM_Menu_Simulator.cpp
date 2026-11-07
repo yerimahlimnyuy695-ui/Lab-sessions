@@ -6,7 +6,6 @@ int main() {
     double amount;
     int choice;
 
-    // Simple PIN check: the user has three attempts.
     const int correctPIN = 1234;
     int enteredPIN;
     bool authenticated = false;
@@ -17,7 +16,7 @@ int main() {
 
         if (enteredPIN == correctPIN) {
             authenticated = true;
-            break; // Stop asking once the correct PIN is entered.
+            break; 
         }
 
         cout << "Incorrect PIN.\n";
@@ -28,7 +27,6 @@ int main() {
         return 0;
     }
 
-    // Keep displaying the ATM menu until the user chooses Exit.
     do {
         cout << "\n===== ATM MENU =====\n";
         cout << "1. Check balance\n";
@@ -82,22 +80,3 @@ int main() {
     cout << "Final balance: " << balance << " FCFA\n";
     return 0;
 }
-
-/*
-EXPLANATION
-- balance stores the account's current money.
-- for gives the user three opportunities to enter the correct PIN.
-- break exits the PIN loop immediately after a correct PIN.
-- do...while keeps the menu running until option 4 is selected.
-- switch selects the operation requested by the user.
-- += adds a deposit; -= subtracts a withdrawal.
-- A withdrawal is rejected if it is non-positive or greater than the balance.
-
-DEMONSTRATION
-Starting balance: 25,000 FCFA
-Deposit:           5,000 FCFA
-Withdrawal:        7,000 FCFA
-Final balance:    23,000 FCFA
-
-The exercise does not specify a PIN value; this example uses 1234.
-*/
